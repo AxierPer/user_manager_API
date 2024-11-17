@@ -63,11 +63,11 @@ The API will run on http://127.0.0.1:5000. You can now make requests to the avai
 
 ## Here's a list of available API endpoints:
 
-- **GET /users**: Retrieve a list of all users.
-- **POST /users**: Create a new user. Requires name, email, and age in the request body.
-- **GET /users/<id>**: Retrieve a specific user by ID.
-- **PUT /users/<id>**: Update a user's information.
-- **DELETE /users/<id>**: Delete a user by ID.
+- **GET /user**: Retrieve a list of all users.
+- **POST /user**: Create a new user. Requires name, email, and age in the request body.
+- **GET /user/<id>**: Retrieve a specific user by ID.
+- **PUT /user/<id>**: Update a user's information.
+- **DELETE /user/<id>**: Delete a user by ID.
 
 ---
 
