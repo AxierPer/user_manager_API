@@ -3,15 +3,15 @@ from email_validator import validate_email, EmailNotValidError
 def validate_data(func):
     
     def wrapper(*args, **kwargs):
-        #name = kwargs.get('name') or args[0]
-        last_name = kwargs.get('last_name') or args[0]
-        age = kwargs.get('age') or args[1]
-        email = kwargs.get('email') or args[2]
-        phone = kwargs.get('phone') or args[3]
-        address = kwargs.get('address') or args[4]
+        name = kwargs.get('name') or args[0]
+        last_name = kwargs.get('last_name') or args[1]
+        age = kwargs.get('age') or args[2]
+        email = kwargs.get('email') or args[3]
+        phone = kwargs.get('phone') or args[4]
+        address = kwargs.get('address') or args[5]
         
-        #if not name or len(name) < 3:
-            #raise ValueError("The name must be at least 3 characters long")
+        if not name or len(name) < 3:
+            raise ValueError("The name must be at least 3 characters long")
         
         if not last_name or len(last_name) < 3:
             raise ValueError("The last name must be at least 3 characters long")
