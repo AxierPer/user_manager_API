@@ -11,6 +11,9 @@ class User(Base):
     email = Column(String, index=True)
     phone = Column(BigInteger, index=True)
     address = Column(String, index=True)
+    username = Column(String, index=True)
+    role = Column(String, index=True)
+    password = Column(String, index=True)
 
     def __repr__(self) -> str:
         return f"<User(id = {self.id}, name = {self.name}, last_name = {self.last_name}, email = {self.email}, phone = {self.phone}, address = {self.address})>"

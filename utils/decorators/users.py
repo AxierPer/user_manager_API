@@ -9,9 +9,21 @@ def validate_data(func):
         email = kwargs.get('email') or args[3]
         phone = kwargs.get('phone') or args[4]
         address = kwargs.get('address') or args[5]
+        username = kwargs.get('username') or args[6]
+        role = kwargs.get('role') or args[7]
+        password = kwargs.get('password') or args[8]
         
         if not name or len(name) < 3:
             raise ValueError("The name must be at least 3 characters long")
+        
+        if not username or len(username) < 3:
+            raise ValueError("The username must be at least 3 characters long")
+        
+        if not role or len(role) < 3:
+            raise ValueError("The role must be at least 3 characters long")
+        
+        if not password or len(password) < 3:
+            raise ValueError("The password must be at least 3 characters long")
         
         if not last_name or len(last_name) < 3:
             raise ValueError("The last name must be at least 3 characters long")

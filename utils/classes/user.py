@@ -4,10 +4,10 @@ from database.models import User
 from flask import jsonify
 
 class UserClass:
-    def insert_user(self,name, last_name, age, email, phone, address):
+    def insert_user(self,name, last_name, age, email, phone, address,username, role, password):
         
         db = next(get_db())
-        new_user = User(name=name, last_name=last_name, age=age, email=email, phone=phone, address=address) 
+        new_user = User(name=name, last_name=last_name, age=age, email=email, phone=phone, address=address, username=username, role=role, password=password) 
         db.add(new_user)
         db.commit()
         db.refresh(new_user)
@@ -64,7 +64,7 @@ class UserClass:
             })
     
     
-    def update_user(self,id, name=None, last_name=None, age=None, email=None, phone=None, address=None):
+    def update_user(self,id, name=None, last_name=None, age=None, email=None, phone=None, address=None, username=None, role= None, password=None):
         db = next(get_db())
         user_update = db.query(User).where(User.id == id).first()
         
@@ -86,6 +86,15 @@ class UserClass:
 
             if address:
                 user_update.address = address
+            
+            if username:
+                user_update.username = username
+            
+            if role:
+                user_update.role = role
+            
+            if password:
+                user_update.password = password
 
             db.commit()
 
